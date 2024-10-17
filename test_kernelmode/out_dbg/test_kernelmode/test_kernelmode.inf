@@ -1,0 +1,62 @@
+;
+; test_kernelmode.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System ; TODO: specify appropriate Class
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider    = %ManufacturerName%
+CatalogFile = test_kernelmode.cat
+DriverVer = 10/17/2024,23.1.20.259
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+test_kernelmode.sys = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTamd64.10.0...16299 ; %13% support introduced in build 16299
+
+[Standard.NTamd64.10.0...16299]
+%test_kernelmode.DeviceDesc% = test_kernelmode_Device, Root\test_kernelmode ; TODO: edit hw-id
+
+[test_kernelmode_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+test_kernelmode.sys
+
+;-------------- Service installation
+[test_kernelmode_Device.NT.Services]
+AddService = test_kernelmode,%SPSVCINST_ASSOCSERVICE%, test_kernelmode_Service_Inst
+
+; -------------- test_kernelmode driver install sections
+[test_kernelmode_Service_Inst]
+DisplayName    = %test_kernelmode.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\test_kernelmode.sys
+
+[test_kernelmode_Device.NT.Wdf]
+KmdfService = test_kernelmode, test_kernelmode_wdfsect
+
+[test_kernelmode_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName = "<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "test_kernelmode Installation Disk"
+test_kernelmode.DeviceDesc = "test_kernelmode Device"
+test_kernelmode.SVCDESC = "test_kernelmode Service"
