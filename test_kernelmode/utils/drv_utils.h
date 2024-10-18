@@ -6,7 +6,6 @@ class c_drv_utl
 {
 public:
 	void dbg_print(PCSTR txt);
-
 };
 
 class c_drv_request

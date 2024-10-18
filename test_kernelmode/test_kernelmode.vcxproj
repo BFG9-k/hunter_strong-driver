@@ -102,6 +102,7 @@
     <Link>
       <EntryPointSymbol>kernel_entry</EntryPointSymbol>
       <ForceFileOutput>UndefinedSymbolOnly</ForceFileOutput>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='kernel_rls|x64'">
@@ -137,12 +138,16 @@
     <FilesToPackage Include="$(TargetPath)" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="custom\winnt\winnt_custom.cpp" />
     <ClCompile Include="related\drv_related.cpp" />
     <ClCompile Include="related\drv_related_functions.cpp" />
     <ClCompile Include="utils\drv_utils.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="custom\custom.h" />
+    <ClInclude Include="custom\winnt\winnt_custom.h" />
+    <ClInclude Include="custom\winnt\winnt_custom_defs.h" />
     <ClInclude Include="extension\drv_extension.h" />
     <ClInclude Include="related\drv_related.h" />
     <ClInclude Include="utils\drv_utils.h" />
