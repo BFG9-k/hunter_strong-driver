@@ -8,6 +8,6 @@ NTSTATUS kernel_entry()
 	RtlInitUnicodeString(&drv_related::drv_name, L"\\Driver\\test_drv");
 
 	//return custom_winnt::g_winnt.IoCreateDriver(drv_related::drv_main); // бсодит - UNHANDLED_SYSTEM_EXCEPTION
-	drv_related::g_utls.dbg_print("(km) **=> creating driver\n", drv_related::drv_name); // "++=> entered kernel EP\n" (drv_extension::strings::km_s_006)
+	drv_related::g_utls.dbg_print("(km) **=> creating driver\n"); // "++=> entered kernel EP\n" (drv_extension::strings::km_s_006)
 	return drv_extension::IoCreateDriver(&drv_related::drv_name, drv_related::drv_main);
 }

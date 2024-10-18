@@ -54,6 +54,6 @@ namespace usermode
 
 namespace strings
 {
-	inline auto s_001 = skCrypt(" was not found\n");
-	inline auto s_002 = skCrypt("++=> attached to the target process\n");
+	inline auto s_001 = skCrypt("(um) was not found\n");
+	inline auto s_002 = skCrypt("(um) ++=> attached to the target process\n");
 }

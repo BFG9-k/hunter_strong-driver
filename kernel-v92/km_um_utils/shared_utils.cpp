@@ -104,7 +104,7 @@ void usermode::c_shared::open_handle()
 
 	if (usermode::g_shared->drv_handle == INVALID_HANDLE_VALUE)
 	{
-		std::cout << "__=> unable to open driver handle\n";
+		std::cout << "(um) --=> unable to open driver handle\n";
 		std::cin.get();
 	}
 }
