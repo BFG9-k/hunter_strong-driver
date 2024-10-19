@@ -1,5 +1,5 @@
 #include "related\drv_related.h"
-#include "../custom/CreateDriver.h"
+
 
 NTSTATUS DriverEntry()
 {
