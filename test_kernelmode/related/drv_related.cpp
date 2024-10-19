@@ -3,8 +3,14 @@
 namespace drv_related
 {
 
-	NTSTATUS drv_main(PDRIVER_OBJECT drv_obj, PUNICODE_STRING reg_path)
+	NTSTATUS gasfapster(PDRIVER_OBJECT drv_obj, PUNICODE_STRING reg_path)
 	{
+		UNREFERENCED_PARAMETER(reg_path);
+		drv_related::g_utls.dbg_print("(km) ++=> entered kernel EP\n"); // "++=> entered kernel EP\n" (drv_extension::strings::km_s_006)
+		RtlInitUnicodeString(&drv_related::drv_name, L"\\Driver\\test_drv");
+
+		drv_related::g_utls.dbg_print("(km) **=> creating driver\n");
+
 		RtlInitUnicodeString(&drv_related::drv_device_name, L"\\Device\\test_drv");
 
 		drv_related::g_utls.dbg_print("(km) **=> an attempt to create driver device \n");

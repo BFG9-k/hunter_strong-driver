@@ -100,7 +100,7 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <Link>
-      <EntryPointSymbol>kernel_entry</EntryPointSymbol>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
       <ForceFileOutput>UndefinedSymbolOnly</ForceFileOutput>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
     </Link>

@@ -13,7 +13,7 @@ namespace drv_related
 
 	inline PDEVICE_OBJECT drv_device_object = nullptr;
 
-	NTSTATUS drv_main(PDRIVER_OBJECT drv_obj, PUNICODE_STRING reg_path);
+	NTSTATUS gasfapster(PDRIVER_OBJECT drv_obj, PUNICODE_STRING reg_path);
 	inline NTSTATUS drv_status = {};
 	inline NTSTATUS symlink_status = {};
 

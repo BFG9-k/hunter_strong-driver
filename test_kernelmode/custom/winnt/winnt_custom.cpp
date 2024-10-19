@@ -82,6 +82,4 @@ NTSTATUS __fastcall c_custom_winnt::IoCreateDriver(_In_ NTSTATUS(__fastcall* Ent
 	}
 
 	return custom_winnt::g_winnt_data.status; // If everything went correctly this will return the driver's result
-
-	return STATUS_SUCCESS;
 }
