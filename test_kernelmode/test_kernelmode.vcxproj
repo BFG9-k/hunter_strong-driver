@@ -76,6 +76,7 @@
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
     <OutDir>.\out_dbg\</OutDir>
     <IntDir>.\intermediates\</IntDir>
+    <EnableInf2cat>false</EnableInf2cat>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='kernel_rls|x64'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
@@ -138,7 +139,6 @@
     <FilesToPackage Include="$(TargetPath)" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="custom\winnt\winnt_custom.cpp" />
     <ClCompile Include="related\drv_related.cpp" />
     <ClCompile Include="related\drv_related_functions.cpp" />
     <ClCompile Include="utils\drv_utils.cpp" />
@@ -146,8 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="custom\custom.h" />
-    <ClInclude Include="custom\winnt\winnt_custom.h" />
-    <ClInclude Include="custom\winnt\winnt_custom_defs.h" />
     <ClInclude Include="extension\drv_extension.h" />
     <ClInclude Include="related\drv_related.h" />
     <ClInclude Include="utils\drv_utils.h" />

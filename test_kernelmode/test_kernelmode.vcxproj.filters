@@ -36,9 +36,6 @@
     <ClCompile Include="related\drv_related_functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="custom\winnt\winnt_custom.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils\drv_utils.h">
@@ -50,13 +47,7 @@
     <ClInclude Include="related\drv_related.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="custom\winnt\winnt_custom_defs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="custom\custom.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="custom\winnt\winnt_custom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

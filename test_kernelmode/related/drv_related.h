@@ -32,4 +32,6 @@ namespace drv_related
 		constexpr unsigned long read_code = CTL_CODE(FILE_DEVICE_UNKNOWN, 0x697, METHOD_BUFFERED, FILE_SPECIAL_ACCESS);
 		constexpr unsigned long write_code = CTL_CODE(FILE_DEVICE_UNKNOWN, 0x698, METHOD_BUFFERED, FILE_SPECIAL_ACCESS);
 	}
+
+
 };
